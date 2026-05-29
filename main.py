@@ -23,6 +23,19 @@ def calculadora(num1: float, num2: float, operador: str) -> float:
 
     return result
 
+def calculadora2(num1: float, num2: float, operador: str) -> float:
+    operacoes = {
+        '+':  lambda a, b: a + b,
+        '-':  lambda a, b: a - b,
+        '*':  lambda a, b: a * b,
+        '/':  lambda a, b: a / b,
+        '**': lambda a, b: a ** b,
+        '%':  lambda a, b: a % b,
+    }
+    if operador not in operacoes:
+        return float("nan")
+    return operacoes[operador](num1, num2)
+
 
 if __name__ == "__main__":
     while True:
